@@ -1,0 +1,2068 @@
+2016-10-09 09:45:03,305 [Thread-4:9860] [django.request:182] [base:get_response] [WARNING]- Not Found: /index
+2016-10-09 09:45:03,313 [Thread-5:4112] [django.request:182] [base:get_response] [WARNING]- Not Found: /index
+2016-10-09 16:13:14,963 [Thread-12:8956] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-10-09 16:35:54,781 [Thread-15:6552] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.IntegrityError: (1048, "Column 'user_id' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1437, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "c:\python35\Lib\contextlib.py", line 30, in inner
+    return func(*args, **kwds)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1378, in changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 991, in save_model
+    obj.save()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 708, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 736, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 820, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 859, in _do_insert
+    using=using, raw=raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\query.py", line 1039, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\sql\compiler.py", line 1060, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+django.db.utils.IntegrityError: (1048, "Column 'user_id' cannot be null")
+2016-10-09 16:40:25,210 [Thread-25:8624] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.IntegrityError: (1048, "Column 'user_id' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1437, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "c:\python35\Lib\contextlib.py", line 30, in inner
+    return func(*args, **kwds)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1378, in changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 991, in save_model
+    obj.save()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 708, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 736, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 820, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 859, in _do_insert
+    using=using, raw=raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\query.py", line 1039, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\sql\compiler.py", line 1060, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+django.db.utils.IntegrityError: (1048, "Column 'user_id' cannot be null")
+2016-10-09 16:41:30,999 [Thread-38:2616] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.IntegrityError: (1048, "Column 'user_id' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1437, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "c:\python35\Lib\contextlib.py", line 30, in inner
+    return func(*args, **kwds)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1378, in changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 991, in save_model
+    obj.save()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 708, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 736, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 820, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 859, in _do_insert
+    using=using, raw=raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\query.py", line 1039, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\sql\compiler.py", line 1060, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+django.db.utils.IntegrityError: (1048, "Column 'user_id' cannot be null")
+2016-10-09 16:45:49,185 [Thread-3:9892] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+pymysql.err.InternalError: (1054, "Unknown column 'blog_article.user_id_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1577, in changelist_view
+    selection_note=_('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\query.py", line 240, in __len__
+    self._fetch_all()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\sql\compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+django.db.utils.InternalError: (1054, "Unknown column 'blog_article.user_id_id' in 'field list'")
+2016-10-09 16:47:15,767 [Thread-21:7792] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.IntegrityError: (1048, "Column 'user_id' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1437, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "c:\python35\Lib\contextlib.py", line 30, in inner
+    return func(*args, **kwds)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1378, in changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 991, in save_model
+    obj.save()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 708, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 736, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 820, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 859, in _do_insert
+    using=using, raw=raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\query.py", line 1039, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\sql\compiler.py", line 1060, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+django.db.utils.IntegrityError: (1048, "Column 'user_id' cannot be null")
+2016-10-09 16:58:45,520 [Thread-122:6844] [django.request:182] [base:get_response] [WARNING]- Not Found: /admin/blog/user/2/change/
+2016-10-09 16:59:01,743 [Thread-128:10300] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.IntegrityError: (1048, "Column 'user_id' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1437, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "c:\python35\Lib\contextlib.py", line 30, in inner
+    return func(*args, **kwds)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1378, in changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 991, in save_model
+    obj.save()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 708, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 736, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 820, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 859, in _do_insert
+    using=using, raw=raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\query.py", line 1039, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\sql\compiler.py", line 1060, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+django.db.utils.IntegrityError: (1048, "Column 'user_id' cannot be null")
+2016-10-09 17:01:50,340 [Thread-154:10000] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.IntegrityError: (1048, "Column 'user_id' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1437, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "c:\python35\Lib\contextlib.py", line 30, in inner
+    return func(*args, **kwds)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1378, in changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 991, in save_model
+    obj.save()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 708, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 736, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 820, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 859, in _do_insert
+    using=using, raw=raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\query.py", line 1039, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\sql\compiler.py", line 1060, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+django.db.utils.IntegrityError: (1048, "Column 'user_id' cannot be null")
+2016-10-09 17:10:32,657 [Thread-155:8644] [django.request:182] [base:get_response] [WARNING]- Not Found: /index
+2016-10-09 17:10:33,151 [Thread-156:9348] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-10-09 17:10:33,805 [Thread-157:9444] [django.request:182] [base:get_response] [WARNING]- Not Found: /index
+2016-10-09 17:12:52,564 [Thread-222:5660] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.IntegrityError: (1048, "Column 'user_id' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1437, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "c:\python35\Lib\contextlib.py", line 30, in inner
+    return func(*args, **kwds)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1378, in changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 991, in save_model
+    obj.save()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 708, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 736, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 820, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 859, in _do_insert
+    using=using, raw=raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\query.py", line 1039, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\sql\compiler.py", line 1060, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+django.db.utils.IntegrityError: (1048, "Column 'user_id' cannot be null")
+2016-10-09 17:21:47,358 [Thread-9:7736] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.IntegrityError: (1048, "Column 'user_id' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1437, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "c:\python35\Lib\contextlib.py", line 30, in inner
+    return func(*args, **kwds)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 1378, in changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\contrib\admin\options.py", line 991, in save_model
+    obj.save()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 708, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 736, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 820, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\base.py", line 859, in _do_insert
+    using=using, raw=raw)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\query.py", line 1039, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\sql\compiler.py", line 1060, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\backends\mysql\base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\cursors.py", line 308, in _query
+    conn.query(q)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 820, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1002, in _read_query_result
+    result.read()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 1285, in read
+    first_packet = self.connection._read_packet()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 966, in _read_packet
+    packet.check_error()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\connections.py", line 394, in check_error
+    err.raise_mysql_exception(self._data)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+django.db.utils.IntegrityError: (1048, "Column 'user_id' cannot be null")
+2016-10-10 07:41:03,175 [Thread-3:7948] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-10-10 15:13:16,334 [Thread-3:9808] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-10-10 15:42:02,808 [Thread-8:11588] [django.request:182] [base:get_response] [WARNING]- Not Found: /ad/2016/10/a1.jpg
+2016-10-10 15:42:02,855 [Thread-9:8128] [django.request:182] [base:get_response] [WARNING]- Not Found: /ad/2016/10/a2.jpg
+2016-10-10 15:42:02,862 [Thread-10:10696] [django.request:182] [base:get_response] [WARNING]- Not Found: /ad/2016/10/a3.jpg
+2016-10-10 15:42:02,877 [Thread-11:9244] [django.request:182] [base:get_response] [WARNING]- Not Found: /ad/2016/10/a4.jpg
+2016-10-10 15:42:27,754 [Thread-12:9516] [django.request:182] [base:get_response] [WARNING]- Not Found: /index
+2016-10-10 15:42:28,531 [Thread-13:9460] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-10-10 15:46:04,178 [Thread-34:9884] [django.request:182] [base:get_response] [WARNING]- Not Found: /ad/2016/10/a1.jpg
+2016-10-10 15:46:04,250 [Thread-35:10672] [django.request:182] [base:get_response] [WARNING]- Not Found: /ad/2016/10/a2.jpg
+2016-10-10 15:46:04,254 [Thread-36:3144] [django.request:182] [base:get_response] [WARNING]- Not Found: /ad/2016/10/a3.jpg
+2016-10-10 15:46:04,261 [Thread-37:7764] [django.request:182] [base:get_response] [WARNING]- Not Found: /ad/2016/10/a4.jpg
+2016-10-10 15:53:49,341 [Thread-38:10296] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1132, in find_library
+    return parser.libraries[name]
+KeyError: 'custom_filters'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog\blog\views.py", line 47, in index
+    'ad_list':ad_list})
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.get_template(template_name)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 514, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1189, in load
+    lib = find_library(parser, name)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1136, in find_library
+    name, "\n".join(sorted(parser.libraries.keys())),
+django.template.exceptions.TemplateSyntaxError: 'custom_filters' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+future
+i18n
+l10n
+log
+static
+staticfiles
+tz
+2016-10-10 16:00:23,917 [Thread-44:7712] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1132, in find_library
+    return parser.libraries[name]
+KeyError: 'custom_filters'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog\blog\views.py", line 47, in index
+    'ad_list':ad_list})
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.get_template(template_name)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 514, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1189, in load
+    lib = find_library(parser, name)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1136, in find_library
+    name, "\n".join(sorted(parser.libraries.keys())),
+django.template.exceptions.TemplateSyntaxError: 'custom_filters' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+future
+i18n
+l10n
+log
+static
+staticfiles
+tz
+2016-10-10 16:04:08,790 [Thread-57:6620] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1132, in find_library
+    return parser.libraries[name]
+KeyError: 'custom_filters'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog\blog\views.py", line 47, in index
+    'ad_list':ad_list})
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.get_template(template_name)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 514, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1189, in load
+    lib = find_library(parser, name)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1136, in find_library
+    name, "\n".join(sorted(parser.libraries.keys())),
+django.template.exceptions.TemplateSyntaxError: 'custom_filters' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+future
+i18n
+l10n
+log
+static
+staticfiles
+tz
+2016-10-10 16:04:33,420 [Thread-63:10712] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1132, in find_library
+    return parser.libraries[name]
+KeyError: 'custom_filters'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog\blog\views.py", line 47, in index
+    'ad_list':ad_list})
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.get_template(template_name)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 514, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1189, in load
+    lib = find_library(parser, name)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1136, in find_library
+    name, "\n".join(sorted(parser.libraries.keys())),
+django.template.exceptions.TemplateSyntaxError: 'custom_filters' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+future
+i18n
+l10n
+log
+static
+staticfiles
+tz
+2016-10-11 07:19:33,853 [Thread-7:900] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-10-11 10:46:09,432 [Thread-13:7696] [django.request:182] [base:get_response] [WARNING]- Not Found: /index.html
+2016-10-11 15:30:11,167 [Thread-7:1660] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-10-11 15:30:43,239 [Thread-12:10660] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1132, in find_library
+    return parser.libraries[name]
+KeyError: 'myfilter'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 101, in article
+    return render(request,'article.html',locals())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 514, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 267, in do_extends
+    nodelist = parser.parse()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 514, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1189, in load
+    lib = find_library(parser, name)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1136, in find_library
+    name, "\n".join(sorted(parser.libraries.keys())),
+django.template.exceptions.TemplateSyntaxError: 'myfilter' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+future
+i18n
+l10n
+log
+static
+staticfiles
+tz
+2016-10-11 15:34:09,544 [Thread-17:10784] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1132, in find_library
+    return parser.libraries[name]
+KeyError: 'myfilter'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 101, in article
+    return render(request,'article.html',locals())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 514, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 267, in do_extends
+    nodelist = parser.parse()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 514, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1189, in load
+    lib = find_library(parser, name)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 1136, in find_library
+    name, "\n".join(sorted(parser.libraries.keys())),
+django.template.exceptions.TemplateSyntaxError: 'myfilter' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+future
+i18n
+l10n
+log
+static
+staticfiles
+tz
+2016-10-11 15:34:51,891 [Thread-2:6760] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'django_blog.logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 101, in article
+    return render(request,'article.html',locals())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-10-11 15:36:30,983 [Thread-7:9172] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'django_blog.logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 101, in article
+    return render(request,'article.html',locals())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-10-11 15:40:21,607 [Thread-25:6684] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'django_blog.logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 101, in article
+    return render(request,'article.html',locals())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-10-11 15:45:17,474 [Thread-27:9324] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'django_blog.logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 101, in article
+    return render(request,'article.html',locals())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-10-11 16:47:01,180 [Thread-2:6564] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'django_blog.logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 120, in article
+    return render(request,'article.html',locals())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-10-11 16:47:51,718 [Thread-3:6636] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'django_blog.logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 120, in article
+    return render(request,'article.html',locals())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-10-11 17:01:42,431 [Thread-2:8292] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'django_blog.logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 121, in article
+    return render(request,'article.html',locals())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-10-11 17:02:04,298 [Thread-3:8324] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'django_blog.logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 121, in article
+    return render(request,'article.html',locals())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'logout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-10-11 17:18:34,105 [Thread-14:10368] [django.request:182] [base:get_response] [WARNING]- Not Found: /css/reglogin.css
+2016-10-11 17:19:32,093 [Thread-23:7424] [django.request:182] [base:get_response] [WARNING]- Not Found: /css/reglogin.css
+2016-10-11 17:19:48,102 [Thread-26:2464] [django.request:182] [base:get_response] [WARNING]- Not Found: /css/reglogin.css
+2016-10-11 17:20:20,230 [Thread-33:9204] [django.request:182] [base:get_response] [WARNING]- Not Found: /css/reglogin.css
+2016-10-11 17:25:14,338 [Thread-3:5480] [django.request:182] [base:get_response] [WARNING]- Not Found: /css/reglogin.css
+2016-10-12 08:29:30,516 [Thread-7:7692] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-10-12 08:35:06,609 [Thread-30:7692] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 126, in article
+    return render(request,'article.html',locals())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 514, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 267, in do_extends
+    nodelist = parser.parse()
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 514, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 241, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 483, in parse
+    raise self.error(token, 'Empty variable tag on line %d' % token.lineno)
+django.template.exceptions.TemplateSyntaxError: Empty variable tag on line 30
+2016-10-12 14:48:10,803 [Thread-20:3844] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-10-12 14:48:15,937 [Thread-21:10944] [django.request:182] [base:get_response] [WARNING]- Not Found: /index.html
+2016-10-12 15:56:47,580 [Thread-2:9712] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 111, in article
+    click_count=article.value('click_count')
+AttributeError: 'Article' object has no attribute 'value'
+2016-10-12 15:58:51,476 [Thread-2:9544] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 111, in article
+    click_count=article.values('click_count')
+AttributeError: 'Article' object has no attribute 'values'
+2016-10-12 16:07:14,142 [Thread-2:9180] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 112, in article
+    click_count=click_count['click_out']
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\db\models\query.py", line 273, in __getitem__
+    raise TypeError
+TypeError
+2016-10-12 16:09:12,263 [Thread-2:8040] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 112, in article
+    click_count=click_count[0]['click_out']
+KeyError: 'click_out'
+2016-10-12 17:59:16,623 [Thread-48:7972] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'django_blog.aritcle' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 77, in index
+    return render(request, 'index.html',locals())
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\utils\six.py", line 686, in reraise
+    raise value
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'aritcle' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-10-13 08:01:02,282 [Thread-12:8704] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-10-13 09:20:13,824 [Thread-26:3616] [django.request:182] [base:get_response] [WARNING]- Not Found: /portal.php
+2016-10-13 09:21:51,530 [Thread-27:7720] [django.request:182] [base:get_response] [WARNING]- Not Found: /portal.php
+2016-10-13 09:28:46,161 [Thread-99:7248] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-10-13 10:07:13,288 [Thread-2:6956] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 142, in article
+    comment['avatar_url']=avatar_url
+TypeError: 'Comment' object does not support item assignment
+2016-10-13 10:28:11,127 [Thread-2:7252] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 153, in article
+    setattr(item, 'children_comment', [])
+AttributeError: 'dict' object has no attribute 'children_comment'
+2016-10-13 10:29:38,148 [Thread-2:5704] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 153, in article
+    setattr(item, 'children_comment', [])
+AttributeError: 'dict' object has no attribute 'children_comment'
+2016-10-13 10:29:47,405 [Thread-4:6940] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 153, in article
+    setattr(item, 'children_comment', [])
+AttributeError: 'dict' object has no attribute 'children_comment'
+2016-10-13 10:41:05,980 [Thread-41:4300] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 139, in article
+    avatar_url=str(comment.user.avatar)
+AttributeError: 'NoneType' object has no attribute 'avatar'
+2016-10-13 10:41:46,558 [Thread-47:6208] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 139, in article
+    avatar_url=str(comment.user.avatar)
+AttributeError: 'NoneType' object has no attribute 'avatar'
+2016-10-13 10:42:09,525 [Thread-49:6996] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /article/
+Traceback (most recent call last):
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\01my_code\django_basic_venv\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\01my_code\django_blog_rebuild\blog\views.py", line 139, in article
+    avatar_url=str(comment.user.avatar)
+AttributeError: 'NoneType' object has no attribute 'avatar'
+2016-10-13 10:45:33,376 [Thread-9:7684] [django.request:182] [base:get_response] [WARNING]- Not Found: /uploads/
+2016-10-13 10:46:19,712 [Thread-15:5896] [django.request:182] [base:get_response] [WARNING]- Not Found: /uploads/
+2016-10-13 10:50:19,599 [Thread-9:7732] [django.request:182] [base:get_response] [WARNING]- Not Found: /uploads/
+2016-10-13 10:50:33,119 [Thread-13:8536] [django.request:182] [base:get_response] [WARNING]- Not Found: /uploads/
+2016-10-13 10:52:58,299 [Thread-21:8520] [django.request:182] [base:get_response] [WARNING]- Not Found: /uploads/
+2016-10-13 10:53:44,213 [Thread-28:4452] [django.request:182] [base:get_response] [WARNING]- Not Found: /uploads/
+2016-10-13 10:54:01,924 [Thread-36:9108] [django.request:182] [base:get_response] [WARNING]- Not Found: /uploads/
+2016-10-13 10:54:07,506 [Thread-45:7868] [django.request:182] [base:get_response] [WARNING]- Not Found: /uploads/
+2016-10-13 10:54:16,396 [Thread-48:8032] [django.request:182] [base:get_response] [WARNING]- Not Found: /uploads/
+2016-10-13 10:54:45,620 [Thread-53:2300] [django.request:182] [base:get_response] [WARNING]- Not Found: /uploads/
+2016-10-13 10:55:15,855 [Thread-57:5400] [django.request:182] [base:get_response] [WARNING]- Not Found: /uploads/
+2016-10-13 14:19:58,374 [Thread-3:9948] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico

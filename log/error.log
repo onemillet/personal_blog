@@ -1,0 +1,37 @@
+2016-10-09 09:45:09,155 [Thread-6:5212] [blog.views:13] [views:index] [ERROR]- [Errno 2] No such file or directory: 'xxx.txt'
+2016-10-09 09:52:45,841 [Thread-10:9224] [blog.views:13] [views:index] [ERROR]- [Errno 2] No such file or directory: 'xxx.txt'
+2016-10-09 10:13:47,553 [Thread-2:9468] [blog.views:25] [views:index] [ERROR]- [Errno 2] No such file or directory: 'xxx.txt'
+2016-10-09 10:15:28,156 [Thread-12:9572] [blog.views:25] [views:index] [ERROR]- [Errno 2] No such file or directory: 'xxx.txt'
+2016-10-09 17:01:30,319 [Thread-130:9756] [blog.views:25] [views:index] [ERROR]- [Errno 2] No such file or directory: 'xxx.txt'
+2016-10-09 17:10:38,227 [Thread-158:4980] [blog.views:25] [views:index] [ERROR]- [Errno 2] No such file or directory: 'xxx.txt'
+2016-10-10 07:40:59,893 [Thread-2:1864] [blog.views:25] [views:index] [ERROR]- [Errno 2] No such file or directory: 'xxx.txt'
+2016-10-10 09:26:39,860 [Thread-2:3756] [blog.views:25] [views:index] [ERROR]- [Errno 2] No such file or directory: 'xxx.txt'
+2016-10-10 10:01:17,489 [Thread-2:2028] [blog.views:25] [views:index] [ERROR]- [Errno 2] No such file or directory: 'xxx.txt'
+2016-10-10 10:01:52,978 [Thread-2:164] [blog.views:25] [views:index] [ERROR]- [Errno 2] No such file or directory: 'xxx.txt'
+2016-10-10 10:05:58,923 [Thread-18:9964] [blog.views:25] [views:index] [ERROR]- [Errno 2] No such file or directory: 'xxx.txt'
+2016-10-11 07:47:34,425 [Thread-2:8748] [blog.views:56] [views:index] [ERROR]- 'Cursor' object has no attribute 'excute'
+2016-10-11 07:48:35,455 [Thread-2:9640] [blog.views:56] [views:index] [ERROR]- 'Cursor' object has no attribute 'excute'
+2016-10-11 07:49:19,644 [Thread-2:8356] [blog.views:56] [views:index] [ERROR]- 'Cursor' object has no attribute 'excute'
+2016-10-11 07:49:45,227 [Thread-2:9560] [blog.views:56] [views:index] [ERROR]- 'Cursor' object has no attribute 'excute'
+2016-10-11 07:51:27,138 [Thread-2:9104] [blog.views:56] [views:index] [ERROR]- 'Cursor' object has no attribute 'excute'
+2016-10-11 08:22:28,364 [Thread-2:8136] [blog.views:59] [views:index] [ERROR]- 'datetime.datetime' object has no attribute 'strtime'
+2016-10-11 08:26:36,783 [Thread-2:9076] [blog.views:59] [views:index] [ERROR]- 'datetime.datetime' object has no attribute 'strtime'
+2016-10-11 08:28:08,542 [Thread-2:8292] [blog.views:59] [views:index] [ERROR]- 'locale' codec can't encode character '\u6587' in position 5: Illegal byte sequence
+2016-10-11 08:29:21,032 [Thread-2:10020] [blog.views:59] [views:index] [ERROR]- 'locale' codec can't encode character '\u6587' in position 5: Illegal byte sequence
+2016-10-11 08:29:55,261 [Thread-2:8848] [blog.views:59] [views:index] [ERROR]- 'locale' codec can't encode character '\u6587' in position 5: Illegal byte sequence
+2016-10-11 08:30:37,154 [Thread-2:7920] [blog.views:59] [views:index] [ERROR]- 'locale' codec can't encode character '\u6587' in position 5: Illegal byte sequence
+2016-10-11 08:31:21,198 [Thread-2:9920] [blog.views:59] [views:index] [ERROR]- 'dict' object has no attribute 'strftime'
+2016-10-11 08:32:05,244 [Thread-2:5704] [blog.views:59] [views:index] [ERROR]- 'dict' object has no attribute 'strftime'
+2016-10-11 08:33:48,210 [Thread-2:316] [blog.views:59] [views:index] [ERROR]- 'dict' object has no attribute 'strftime'
+2016-10-11 08:59:13,901 [Thread-2:8824] [blog.views:59] [views:index] [ERROR]- 'dict' object has no attribute 'strftime'
+2016-10-11 09:00:32,316 [Thread-2:10172] [blog.views:59] [views:index] [ERROR]- 'dict' object has no attribute 'strftime'
+2016-10-11 09:01:40,144 [Thread-2:7308] [blog.views:59] [views:index] [ERROR]- 'locale' codec can't encode character '\u6587' in position 5: Illegal byte sequence
+2016-10-11 09:04:09,571 [Thread-2:8992] [blog.views:59] [views:index] [ERROR]- 'locale' codec can't encode character '\u6587' in position 5: Illegal byte sequence
+2016-10-11 09:46:02,405 [Thread-2:10232] [blog.views:76] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
+2016-10-11 09:46:55,606 [Thread-2:9228] [blog.views:76] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
+2016-10-11 09:47:47,660 [Thread-2:6208] [blog.views:78] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
+2016-10-11 11:02:53,942 [Thread-12:6704] [blog.views:63] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
+2016-10-11 11:03:46,267 [Thread-19:10064] [blog.views:63] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
+2016-10-11 11:05:06,020 [Thread-27:1264] [blog.views:63] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
+2016-10-11 11:10:54,123 [Thread-28:9368] [blog.views:63] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
+2016-10-12 09:57:05,174 [Thread-47:6920] [blog.views:207] [views:do_login] [ERROR]- argument of type 'NoneType' is not iterable
